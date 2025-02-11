@@ -18,21 +18,37 @@
         <div class="panel">
             <img class="logo" src="/assets/img/logo.svg" alt="Logotype Habbit App">
             <nav class="menu">
-                <div class="menu__list">
-                    <button class="menu__item menu__item_active">
-                        <img src="/assets/img/water.svg" alt="water">
-                    </button>
-                    <button class="menu__item">
-                        <img src="/assets/img/food.svg" alt="food">
-                    </button>
-                </div>
+                <div class="menu__list"></div>
                 <button class="menu__add">
                     <img src="/assets/img/add_item.svg" alt="added habbit">
                 </button>
             </nav>
         </div>
         <div class="content">
-            
+            <header>
+                <h1 class="h1">-</h1>
+                <div class="progress">
+                    <div class="progress__text">
+                        <div class="progress__name">Прогресс</div>
+                        <div class="progress__percent">%</div>
+                    </div>
+
+                    <div class="progress__bar">
+                        <div class="progress__cover-bar"></div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div id="days"></div>
+                <div class="habbit">
+                    <div class="habbit__day">День 2</div>
+                    <form class="habbit__form">
+                        <input class="input_icon" type="text" placeholder="Комментарий" />
+                        <img class="input__icon" src="./assets/img/comment.svg" alt="comment">
+                        <button class="button">Готово</button>
+                    </form>
+                </div>
+            </main>
         </div>
     </div>
 

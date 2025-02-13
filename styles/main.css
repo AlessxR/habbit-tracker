@@ -193,6 +193,10 @@ input::placeholder {
     color: #8899;
 }
 
+input.error {
+    border: 1px solid red;
+}
+
 .habbit__form {
     display: flex;
     gap: 15px;
@@ -226,3 +230,102 @@ input::placeholder {
     background: #dcdaff;
 }
 
+.cover {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0,0,0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover_hidden {
+    display: none;
+    /* transition: 0.5s all; */
+}
+
+.popup {
+    border-radius: 10px;
+    box-shadow: 0px 8px 14px 12px rgba(56, 56, 56, 0.05);
+    background: rgb(255, 255, 255);
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+h2 {
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+}
+
+.icon-label {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 10px;
+}
+
+.icon-selector {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    border: 1px solid rgb(80, 81, 249);
+    border-radius: 14px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.icon_active {
+    background: rgb(80, 81, 249);
+}
+
+.icon:hover {
+    background: #6A6AFB;
+}
+
+.icon:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.icon_active img {
+    filter: brightness(0) invert(1);
+}
+
+.popup__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.popup__form input {
+    width: 100%;
+}

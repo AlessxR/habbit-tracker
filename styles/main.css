@@ -55,8 +55,9 @@ body {
 }
 
 .menu__item:hover img{
-    filter: brightness(0) invert(1);
+    filter: brightness(1) invert(0);
 }
+
 .menu__item_active {
     background: #5051F9;
 }
@@ -91,17 +92,15 @@ header {
 }
 
 .content {
-    min-width: 900px;
+    min-width: 90%;
     padding: 45px;
 }
-
-
 
 .progress {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    min-width: 235px;
+    min-width: 15%;
 }
 
 .progress__text {
@@ -148,8 +147,14 @@ main {
     margin-bottom: 12px;
 }
 
+.habbit__descr {
+    text-align: center;
+    font-size: 14px;
+    padding: 25px;
+}
+
 .habbit__day {
-    background: #e6e6e9;
+    background: #fcfcfc;
     border-radius: 10px 0 0 10px;
     border-right: 1px solid #E7EBFB;
     font-size: 14px;

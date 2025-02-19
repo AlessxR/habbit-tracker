@@ -18,7 +18,9 @@
         <div class="panel">
             <img class="logo" src="/assets/img/logo.svg" alt="Logotype Habbit App">
             <nav class="menu">
-                <div class="menu__list"></div>
+                <div class="menu__list">
+
+                </div>
                 <button class="menu__add" onclick="togglePopup()">
                     <img src="/assets/img/add_item.svg" alt="added habbit">
                 </button>
@@ -41,7 +43,7 @@
             <main>
                 <div id="days"></div>
                 <div class="habbit">
-                    <div class="habbit__day"></div>
+                    <div class="habbit__descr">Комментарий</div>
                     <form class="habbit__form" onsubmit="addDays(event)" habbit-id="">
                         <input name="comment" class="input_icon" type="text" placeholder="Комментарий" />
                         <img class="input__icon" src="./assets/img/comment.svg" alt="comment">
@@ -51,7 +53,7 @@
             </main>
         </div>
 
-        <div class="cover" id="add-habbit-popup">
+        <div class="cover cover_hidden" id="add-habbit-popup">
             <div class="popup">
                 <h2>Новая привычка</h2>
                 <div class="icon-label">Icon</div>

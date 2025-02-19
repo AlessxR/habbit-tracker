@@ -20,20 +20,31 @@ const page = {
     popup: {
         index: document.getElementById('add-habbit-popup'),
         iconField: document.querySelector('.popup__form input[name="icon"]')
+    },
+    cover: {
+        coverHidden: document.querySelector('.cover'),
     }
 };
 
 // Utils
 function loadData() {
     const habbitsString = localStorage.getItem(HABBIT_KEY);
-    const habbitArray = JSON.parse(habbitsString);
+    if (!habbitsString) {
+        habbits = [];
+        saveData(); // Сохраняем пустой массив в localStorage
+    } else {
+        habbits = JSON.parse(habbitsString) || [];
+    }
 
-    if (Array.isArray(habbitArray)) {
-        habbits = habbitArray
+    if (habbits.length === 0) {
+        page.cover.coverHidden.classList.remove('cover_hidden');
+    } else {
+        page.cover.coverHidden.classList.add('cover_hidden');
     }
 }
 
 function saveData() {
+    console.log(habbits);
     localStorage.setItem(HABBIT_KEY, JSON.stringify(habbits));
 }
 
@@ -156,9 +167,9 @@ function addDays(event) {
         return habbit;
     });
 
+    saveData(); // Сохраняем обновлённый массив привычек в localStorage
     resetForm(event.target, ['comment']);
     rerender(globalActiveHabbitId); // Перерисовываем активную привычку
-    saveData(); // Сохраняем обновлённый массив привычек в localStorage
 }
 
 function deleteDay(index) {
@@ -172,8 +183,8 @@ function deleteDay(index) {
         }
         return habbit;
     });
-    rerender(globalActiveHabbitId);
     saveData(); // Сохраняем обновлённый массив привычек в localStorage
+    rerender(globalActiveHabbitId);
 }
 
 // Popup 
@@ -210,9 +221,9 @@ function addHabbit(event) {
         icon: data.icon,
         days: []
     });
+    saveData();
     resetForm(event.target, ['name', 'icon', 'target']);
     togglePopup();
-    saveData();
     rerender(maxId + 1);
 }
 
